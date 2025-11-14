@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Usuario Tree View -->
+    <record model="ir.ui.view" id="biblioteca_usuario_tree">
+      <field name="name">Usuario Tree</field>
+      <field name="model">biblioteca.usuario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="active"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Usuario Form View -->
+    <record model="ir.ui.view" id="biblioteca_usuario_form">
+      <field name="name">Usuario Form</field>
+      <field name="model">biblioteca.usuario</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <group>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="active"/>
+                <field name="member_since"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Préstamos">
+                <field name="loan_ids"/>
+              </page>
+              <page string="Multas">
+                <field name="fine_ids"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Usuario List View -->
+    <record model="ir.ui.view" id="biblioteca_usuario_list">
+      <field name="name">Usuario List</field>
+      <field name="model">biblioteca.usuario</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="email"/>
+          <field name="phone"/>
+          <field name="active"/>
+          <field name="member_since"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Usuario Action Window -->
+    <record model="ir.actions.act_window" id="biblioteca_usuario_action">
+      <field name="name">Usuarios</field>
+      <field name="res_model">biblioteca.usuario</field>
+      <field name="view_mode">tree,list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear un nuevo usuario
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

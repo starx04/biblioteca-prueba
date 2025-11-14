@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Libro Tree View -->
+    <record model="ir.ui.view" id="biblioteca_libro_tree">
+      <field name="name">Libro Tree</field>
+      <field name="model">biblioteca.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="available_copies"/>
+          <field name="copies"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Libro Form View -->
+    <record model="ir.ui.view" id="biblioteca_libro_form">
+      <field name="name">Libro Form</field>
+      <field name="model">biblioteca.libro</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <group>
+                <field name="isbn"/>
+                <field name="editorial_id"/>
+              </group>
+              <group>
+                <field name="copies"/>
+                <field name="available_copies"/>
+              </group>
+            </group>
+            <group>
+              <field name="description"/>
+            </group>
+            <notebook>
+              <page string="Autores">
+                <field name="author_ids"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Libro List View -->
+    <record model="ir.ui.view" id="biblioteca_libro_list">
+      <field name="name">Libro List</field>
+      <field name="model">biblioteca.libro</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="isbn"/>
+          <field name="editorial_id"/>
+          <field name="copies"/>
+          <field name="available_copies"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Libro Action Window -->
+    <record model="ir.actions.act_window" id="biblioteca_libro_action">
+      <field name="name">Libros</field>
+      <field name="res_model">biblioteca.libro</field>
+      <field name="view_mode">tree,list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear un nuevo libro
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

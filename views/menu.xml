@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+    <menuitem name="Biblioteca" id="biblioteca_menu_root" web_icon="biblioteca_prueba,static/description/icon.png"/>
+    
+    <!-- Menu categories -->
+    <menuitem name="Gestión de Contenido" id="biblioteca_menu_content" parent="biblioteca_menu_root"/>
+    <menuitem name="Gestión de Préstamos" id="biblioteca_menu_loans" parent="biblioteca_menu_root"/>
+    <menuitem name="Administración" id="biblioteca_menu_admin" parent="biblioteca_menu_root"/>
+    
+    <!-- Content submenu -->
+    <menuitem name="Libros" id="biblioteca_menu_libros" parent="biblioteca_menu_content" 
+              action="biblioteca_libro_action"/>
+    <menuitem name="Autores" id="biblioteca_menu_autores" parent="biblioteca_menu_content" 
+              action="biblioteca_autor_action"/>
+    <menuitem name="Editoriales" id="biblioteca_menu_editoriales" parent="biblioteca_menu_content" 
+              action="biblioteca_editorial_action"/>
+    
+    <!-- Loans submenu -->
+    <menuitem name="Préstamos" id="biblioteca_menu_prestamos" parent="biblioteca_menu_loans" 
+              action="biblioteca_prestamo_action"/>
+    <menuitem name="Multas" id="biblioteca_menu_multas" parent="biblioteca_menu_loans" 
+              action="biblioteca_multa_action"/>
+    
+    <!-- Admin submenu -->
+    <menuitem name="Usuarios" id="biblioteca_menu_usuarios" parent="biblioteca_menu_admin" 
+              action="biblioteca_usuario_action"/>
+    <menuitem name="Personal" id="biblioteca_menu_personal" parent="biblioteca_menu_admin" 
+              action="biblioteca_personal_action"/>
+
+  </data>
+</odoo>

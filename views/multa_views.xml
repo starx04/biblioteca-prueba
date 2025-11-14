@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Multa Tree View -->
+    <record model="ir.ui.view" id="biblioteca_multa_tree">
+      <field name="name">Multa Tree</field>
+      <field name="model">biblioteca.multa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="usuario_id"/>
+          <field name="amount"/>
+          <field name="paid"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Multa Form View -->
+    <record model="ir.ui.view" id="biblioteca_multa_form">
+      <field name="name">Multa Form</field>
+      <field name="model">biblioteca.multa</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <group>
+                <field name="prestamo_id"/>
+                <field name="usuario_id"/>
+                <field name="amount"/>
+                <field name="paid"/>
+              </group>
+            </group>
+            <group>
+              <field name="reason"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Multa List View -->
+    <record model="ir.ui.view" id="biblioteca_multa_list">
+      <field name="name">Multa List</field>
+      <field name="model">biblioteca.multa</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="usuario_id"/>
+          <field name="prestamo_id"/>
+          <field name="amount"/>
+          <field name="paid"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Multa Action Window -->
+    <record model="ir.actions.act_window" id="biblioteca_multa_action">
+      <field name="name">Multas</field>
+      <field name="res_model">biblioteca.multa</field>
+      <field name="view_mode">tree,list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear una nueva multa
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Editorial Tree View -->
+    <record model="ir.ui.view" id="biblioteca_editorial_tree">
+      <field name="name">Editorial Tree</field>
+      <field name="model">biblioteca.editorial</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Editorial Form View -->
+    <record model="ir.ui.view" id="biblioteca_editorial_form">
+      <field name="name">Editorial Form</field>
+      <field name="model">biblioteca.editorial</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <group>
+                <field name="address"/>
+                <field name="phone"/>
+                <field name="email"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Libros">
+                <field name="book_ids"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Editorial List View -->
+    <record model="ir.ui.view" id="biblioteca_editorial_list">
+      <field name="name">Editorial List</field>
+      <field name="model">biblioteca.editorial</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="phone"/>
+          <field name="email"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Editorial Action Window -->
+    <record model="ir.actions.act_window" id="biblioteca_editorial_action">
+      <field name="name">Editoriales</field>
+      <field name="res_model">biblioteca.editorial</field>
+      <field name="view_mode">tree,list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear una nueva editorial
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

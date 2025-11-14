@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+    <!-- Autor Tree View -->
+    <record model="ir.ui.view" id="biblioteca_autor_tree">
+      <field name="name">Autor Tree</field>
+      <field name="model">biblioteca.autor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Autor Form View -->
+    <record model="ir.ui.view" id="biblioteca_autor_form">
+      <field name="name">Autor Form</field>
+      <field name="model">biblioteca.autor</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <field name="bio"/>
+              <field name="book_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Autor List View -->
+    <record model="ir.ui.view" id="biblioteca_autor_list">
+      <field name="name">Autor List</field>
+      <field name="model">biblioteca.autor</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Autor Action Window -->
+    <record model="ir.actions.act_window" id="biblioteca_autor_action">
+      <field name="name">Autores</field>
+      <field name="res_model">biblioteca.autor</field>
+      <field name="view_mode">tree,list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear un nuevo autor
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>
