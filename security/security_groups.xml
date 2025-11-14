@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+    
+    <!-- Security Groups -->
+    <record id="group_biblioteca_manager" model="res.groups">
+      <field name="name">Biblioteca / Manager</field>
+      <field name="category_id" ref="base.module_category_managing_documents"/>
+      <field name="comment">El usuario puede gestionar todos los aspectos de la biblioteca</field>
+    </record>
+
+    <record id="group_biblioteca_user" model="res.groups">
+      <field name="name">Biblioteca / User</field>
+      <field name="category_id" ref="base.module_category_managing_documents"/>
+      <field name="comment">El usuario puede consultar la biblioteca con permisos limitados</field>
+    </record>
+
+  </data>
+</odoo>
